@@ -12,6 +12,7 @@ public class Player {
 	private int defHealth;
 	private int defMoney;
 	private boolean isAlive;
+	private int armorAvoid;
 
 	Scanner scanner = new Scanner(System.in);
 
@@ -20,8 +21,8 @@ public class Player {
 	}
 
 	public void selectChar() {
-		System.out.println("Select a character please");
-		System.out.println("1 for samurai\n2 for archer\n3 for knight\n4 for exit\n");
+		System.out.println("Select Character");
+		System.out.println("1 => SAMURAI\n2 => ARCHER\n3 => KNIGHT\n4 => Exit");
 		int choice = scanner.nextInt();
 		while (choice < 1 || choice > 4) {
 			System.err.println("Please enter a valid value!");
@@ -30,7 +31,7 @@ public class Player {
 
 		switch (choice) {
 		case 1:
-			playerAttributes("Samurai", 5, 21, 15);
+			playerAttributes("Samurai", 5, 21, 100);
 			break;
 		case 2:
 			playerAttributes("Archer", 7, 18, 20);
@@ -53,10 +54,11 @@ public class Player {
 		this.setDefHealth(health);
 		this.setDefDamage(damage);
 		this.setDefMoney(money);
+		this.armorAvoid = 0;
 		this.isAlive = true;
-		System.out.println(name + " |" + "\tDamage: " + damage + "\tHealth: " + health + "\tMoney: " + money);
+		System.out.println(name + " >>" + " Damage: " + damage + " | Health: " + health + " | Money: " + money);
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -119,6 +121,14 @@ public class Player {
 
 	public void setAlive(boolean isAlive) {
 		this.isAlive = isAlive;
+	}
+
+	public int getArmorAvoid() {
+		return armorAvoid;
+	}
+
+	public void setArmorAvoid(int armorAvoid) {
+		this.armorAvoid = armorAvoid;
 	}
 
 }

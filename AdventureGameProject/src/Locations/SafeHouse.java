@@ -5,7 +5,7 @@ import java.util.Scanner;
 import Entities.Player;
 
 public class SafeHouse extends Location {
-	
+
 	private Scanner scanner = new Scanner(System.in);
 	private Player player;
 
@@ -18,7 +18,7 @@ public class SafeHouse extends Location {
 	}
 
 	private void regenerate() {
-		System.out.println("Welcome to the SafeHouse");
+		System.out.println("***** SAFEHOUSE *****");
 		System.out.println("Your health is regenerated!");
 		player.setHealth(player.getDefHealth());
 
@@ -26,7 +26,7 @@ public class SafeHouse extends Location {
 
 	private void toolStore() {
 		System.out.println("Do you want to go Tool Store?");
-		System.out.println("1 for go\n2 for exit");
+		System.out.println("1 => Go\n2 => Exit");
 		int goToolStore = scanner.nextInt();
 		while (goToolStore < 1 || goToolStore > 2) {
 			System.err.println("Enter a valid value!");
